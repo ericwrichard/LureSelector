@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div id="lureHeader">
+    <h4>Fill out the required fields</h4>
+  </div>
+  <p>{{myImage}}</p>
+  <form (ngSubmit)="filterLures()">
+    <ion-list>
+    <ion-item>
+      <ion-label>Species</ion-label>
+      <ion-select value="species" name="species" [(ngModel)]="species">
+        <ion-option value="bass">Bass</ion-option>
+        <ion-option value="salmon">Salmon</ion-option>
+        <ion-option value="trout">Trout</ion-option>
+        <ion-option value="musky">Musky</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+     <ion-label>Weather</ion-label>
+      <ion-select value="weather" name="weather" [(ngModel)]="weather">
+        <ion-option value=1>Sunny</ion-option>
+        <ion-option value=2>Overcast</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+   <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-select value="weight" name="weight" [(ngModel)]="weight">
+       <ion-option value=1>0-2lbs</ion-option>
+       <ion-option value=2>2-5lbs</ion-option>
+       <ion-option value=3>>5lbs</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Series</ion-label>
+      <ion-select value="series" name="series" [(ngModel)]="series">
+       <ion-option value=1>Classic</ion-option>
+       <ion-option value=2>Premium</ion-option>
+       <ion-option value=3>Platinum</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+    <div id="findButton">
+      <button [navPush]="listPage" ion-button type="submit" icon-left>
+       <ion-icon name="trophy"></ion-icon>
+       Find Lure
+      </button>
+    </div>
+  </form>
+</ion-content>
+
+  
